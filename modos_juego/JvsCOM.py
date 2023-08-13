@@ -2,13 +2,14 @@ from cartas.acciones import *
 import time
 import os
 
-def juego_jvsj(cartas):
+def juego_jvscom(cartas):
     turnos = [True, True]
     jugador1 = []
     jugador2 = []
     suma_J1 = 0
     suma_J2 = 0
     cartas_temp = list(cartas)
+    eleccion = ["Si","si","No","no"]
     while True:
         if turnos[0] == True:
             carta = cartaAzar(cartas_temp)
@@ -25,12 +26,12 @@ def juego_jvsj(cartas):
                 os.system("clear")
         if turnos[1] == True:
             carta = cartaAzar(cartas_temp)
-            print("_"*30,"\nJugador 2, tu carta es:\n", carta)
+            print("_"*30,"\nComputadora, tu carta es:\n", carta)
             jugador2.append(carta)
             print("Tus cartas son:", jugador2)
             cartas_temp.remove(carta)
             time.sleep(4)
-            resp = input("¿Quieres salir J2?\n")
+            resp = random.choice(eleccion)
             if resp == "si" or resp == "Si":
                 suma_J2 = sum(numero for _, numero in jugador2 if isinstance(numero, (int, float)))
                 print("Elegiste salir J2")
