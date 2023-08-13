@@ -17,7 +17,7 @@ def juego_jvsj(cartas):
             print("Tus cartas son:", jugador1)
             cartas_temp.remove(carta)
             time.sleep(4)
-            resp = input("¿Quieres salir J1?\n")
+            resp = input("¿Quieres salir J1?Si/No\n")
             if resp == "si" or resp == "Si":
                 suma_J1 = sum(numero for _, numero in jugador1 if isinstance(numero, (int, float)))
                 print("Elegiste salir J1")
